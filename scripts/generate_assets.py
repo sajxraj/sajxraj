@@ -112,7 +112,7 @@ def banner_svg(d, avatar_b64):
 
 
 # ---------- heatmap ----------
-def heatmap_svg(d):
+def heatmap_body(d):
     cell, gap = 10, 2
     left, top, pad = 40, 58, 18
     weeks = d["calendar"]["weeks"]
@@ -120,7 +120,7 @@ def heatmap_svg(d):
     cols = len(weeks)
     W = pad + left + cols * (cell + gap) + pad
     H = pad + top + 7 * (cell + gap) + 30
-    parts = [card(W, H)]
+    parts = []
     parts.append(f'<text x="{pad+14}" y="30" font-family="{FONT}" font-size="14.5" '
                  f'font-weight="600" fill="{TEXT}">{d["calendar"]["totalContributions"]:,} '
                  f'contributions in the last year</text>')
@@ -156,13 +156,13 @@ def heatmap_svg(d):
                      f'height="{cell}" rx="2.5" fill="{LEVELS[i]}"/>')
     parts.append(f'<text x="{lx+5*(cell+gap)+5:.1f}" y="{ly+9}" font-family="{FONT}" '
                  f'font-size="10" fill="{TEXT_DIM}">More</text>')
-    return svg_doc(W, H, "\n".join(parts))
+    return parts, W, H
 
 
 # ---------- stats card ----------
-def stats_svg(d):
+def stats_body(d):
     W, H = 280, 260
-    parts = [card(W, H)]
+    parts = []
     parts.append(f'<text x="20" y="34" font-family="{FONT}" font-size="14.5" '
                  f'font-weight="600" fill="{TEXT}">On GitHub</text>')
     stats = [("Stars earned", d["stars"], ACCENT),
@@ -198,7 +198,19 @@ def stats_svg(d):
         parts.append(f'<text x="{lx+13}" y="{y0+42}" font-family="{FONT}" '
                      f'font-size="11" fill="{TEXT_DIM}">{esc(label)}</text>')
         lx += 26 + 6.4 * len(label)
-    return svg_doc(W, H, "\n".join(parts))
+    return parts, W, H
+
+
+# ---------- combined activity card (heatmap + stats, gutter baked in) ----------
+def activity_svg(d):
+    hp, hw, hh = heatmap_body(d)
+    sp, sw, sh = stats_body(d)
+    gutter = 16
+    W, H = hw + gutter + sw, max(hh, sh)
+    body = [card(W, H),
+            f'<g transform="translate(0,{(H-hh)//2})">' + "\n".join(hp) + "</g>",
+            f'<g transform="translate({hw + gutter},0)">' + "\n".join(sp) + "</g>"]
+    return svg_doc(W, H, "\n".join(body))
 
 
 def main():
@@ -215,9 +227,8 @@ def main():
         src.write_bytes(urllib.request.urlopen(req, timeout=30).read())
     b64 = base64.b64encode(src.read_bytes()).decode()
     (out / "banner.svg").write_text(banner_svg(d, b64))
-    (out / "heatmap.svg").write_text(heatmap_svg(d))
-    (out / "stats.svg").write_text(stats_svg(d))
-    print(f"wrote banner.svg heatmap.svg stats.svg to {out}/ "
+    (out / "activity.svg").write_text(activity_svg(d))
+    print(f"wrote banner.svg activity.svg to {out}/ "
           f"({d['calendar']['totalContributions']:,} contributions, "
           f"{d['stars']} stars, {d['prs']} PRs)")
 

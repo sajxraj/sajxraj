@@ -48,7 +48,7 @@
 ## Activity
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sajxraj/sajxraj/main/assets/heatmap.svg" alt="Contribution heatmap" width="712">&nbsp;<img src="https://raw.githubusercontent.com/sajxraj/sajxraj/main/assets/stats.svg" alt="GitHub stats" width="280">
+  <img src="https://raw.githubusercontent.com/sajxraj/sajxraj/main/assets/activity.svg" alt="Contribution heatmap and GitHub stats" width="1008">
 </p>
 
 <details>
