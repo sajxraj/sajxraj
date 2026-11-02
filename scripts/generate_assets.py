@@ -59,20 +59,11 @@ def fetch_data(user):
              'query={user(login:"%s"){contributionsCollection{contributionCalendar'
              '{totalContributions weeks{contributionDays{date contributionCount}}}}}}' % user
              )["data"]["user"]["contributionsCollection"]["contributionCalendar"]
-    # real language bytes across public non-fork repos
-    lang_bytes = {}
-    for r in public:
-        try:
-            for k, v in gh(f"repos/{r['full_name']}/languages").items():
-                lang_bytes[k] = lang_bytes.get(k, 0) + v
-        except SystemExit:
-            raise
-    top_langs = sorted(lang_bytes.items(), key=lambda kv: -kv[1])[:5]
     return {
         "user": user, "name": u.get("name") or user,
         "avatar_url": u["avatar_url"],
         "followers": u["followers"], "repos": len(public), "stars": stars,
-        "prs": prs, "calendar": cal, "langs": top_langs,
+        "prs": prs, "calendar": cal,
     }
 
 
@@ -205,7 +196,7 @@ def heatmap_card(d):
 
 
 def stats_card(d, W=712):
-    H = 210
+    H = 130
     parts = [card(W, H)]
     parts.append(f'<text x="20" y="34" font-family="{FONT}" font-size="14.5" '
                  f'font-weight="600" fill="{TEXT}">On GitHub</text>')
@@ -220,26 +211,6 @@ def stats_card(d, W=712):
                      f'font-weight="700" fill="{color}">{val:,}</text>')
         parts.append(f'<text x="{x:.0f}" y="106" font-family="{FONT}" font-size="12.5" '
                      f'fill="{TEXT_DIM}">{label}</text>')
-    parts.append(f'<text x="20" y="140" font-family="{FONT}" font-size="14.5" '
-                 f'font-weight="600" fill="{TEXT}">Top languages</text>')
-    total = sum(v for _, v in d["langs"]) or 1
-    colors = [ACCENT, ACCENT2, ACCENT3, "#f778ba", "#d2a8ff"]
-    x = 20.0
-    for i, (name, v) in enumerate(d["langs"]):
-        w = (W - 40) * (v / total)
-        parts.append(f'<rect x="{x:.1f}" y="152" width="{max(2,w-2):.1f}" height="8" '
-                     f'rx="4" fill="{colors[i]}"/>')
-        x += w
-    n = len(d["langs"])
-    cellw = (W - 40) / max(1, n)
-    for i, (name, v) in enumerate(d["langs"]):
-        x0 = 20 + i * cellw
-        parts.append(f'<circle cx="{x0+4:.0f}" cy="183" r="3.5" fill="{colors[i]}"/>')
-        parts.append(f'<text x="{x0+13:.0f}" y="187" font-family="{FONT}" '
-                     f'font-size="12" fill="{TEXT_DIM}">{esc(name)}</text>')
-        parts.append(f'<text x="{x0+cellw-6:.0f}" y="187" text-anchor="end" '
-                     f'font-family="{MONO}" font-size="11.5" fill="{TEXT}">'
-                     f'{v/total*100:.0f}%</text>')
     return svg_doc(W, H, "\n".join(parts))
 
 
