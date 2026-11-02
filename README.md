@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Sajan Rajbhandari — Full-stack engineer, Kathmandu Nepal" width="1000">
+  <img src="https://raw.githubusercontent.com/sajxraj/sajxraj/main/assets/banner.svg" alt="Sajan Rajbhandari — Senior Software Engineer, Kathmandu Nepal" width="1000">
 </p>
 
 <br>
@@ -13,7 +13,7 @@
 
 ## Now
 
-- 🚀 Building **[kheljatra](https://kheljatra.com)** — live football & cricket prediction game. Laravel 11 · Inertia · Vue 3 · Postgres.
+- 🚀 Building **[kheljatra](https://kheljatra.com)** — live football & cricket prediction game.
 - 🎨 Shipped **[Craftr](https://craftr.app)** — free eCards, memes, postcards, jerseys & coloring pages. Nepali templates + AI touches, web & Android.
 - 🛠️ Working with **[@madebyoutside](https://x.com/madebyoutside)** — full-stack on the products the team builds, mostly Laravel & TypeScript.
 - 🤖 LLM tooling side quests: **open-civic** (AI assistant for Nepal government services) and **ragtopus** (RAG framework, Node + Postgres).
@@ -23,7 +23,7 @@
 
 | Project | What it is | Stack | Live |
 |---|---|---|---|
-| **[kheljatra](https://kheljatra.com)** | Real-time football & cricket prediction game | Laravel 11 · Inertia · Vue 3 · Postgres | [↗ live](https://kheljatra.com) |
+| **[kheljatra](https://kheljatra.com)** | Real-time football & cricket prediction game | — | [↗ live](https://kheljatra.com) |
 | **[Craftr](https://craftr.app)** | eCards, memes, postcards, jerseys & coloring pages — Nepali templates + AI | Web · Android · Cloudinary | [↗ live](https://craftr.app) |
 | **[InventoryManagementSystem](https://github.com/sajxraj/InventoryManagementSystem)** | Desktop inventory tracker (products, suppliers, sales) — most-starred build | Java · Swing | ⭐ 344 |
 | **[OfficeManagementSystem](https://github.com/sajxraj/OfficeManagementSystem)** | Attendance, tasks, leave & complaint management | PHP · MySQL | ⭐ 40 |
@@ -48,7 +48,7 @@
 ## Activity
 
 <p align="center">
-  <img src="assets/heatmap.svg" alt="Contribution heatmap" width="712">&nbsp;<img src="assets/stats.svg" alt="GitHub stats" width="280">
+  <img src="https://raw.githubusercontent.com/sajxraj/sajxraj/main/assets/heatmap.svg" alt="Contribution heatmap" width="712">&nbsp;<img src="https://raw.githubusercontent.com/sajxraj/sajxraj/main/assets/stats.svg" alt="GitHub stats" width="280">
 </p>
 
 <details>

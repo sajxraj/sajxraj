@@ -97,7 +97,7 @@ def banner_svg(d, avatar_b64):
     parts.append(f'<text x="200" y="88" font-family="{FONT}" font-size="34" '
                  f'font-weight="700" fill="{TEXT}">{esc(d["name"])}</text>')
     parts.append(f'<text x="200" y="118" font-family="{FONT}" font-size="15.5" '
-                 f'fill="{TEXT_DIM}">Full-stack engineer · Kathmandu, Nepal · '
+                 f'fill="{TEXT_DIM}">Senior Software Engineer · Kathmandu, Nepal · '
                  f'<tspan fill="{ACCENT}">@{esc(d["user"])}</tspan></text>')
     # chips
     x = 200
