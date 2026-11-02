@@ -230,13 +230,16 @@ def stats_card(d, W=712):
         parts.append(f'<rect x="{x:.1f}" y="152" width="{max(3,w):.1f}" height="8" '
                      f'rx="4" fill="{colors[i]}"/>')
         x += w
-    lx = 20
+    n = len(d["langs"])
+    cellw = (W - 40) / max(1, n)
     for i, (name, v) in enumerate(d["langs"]):
-        label = f'{name} {v/total*100:.0f}%'
-        parts.append(f'<circle cx="{lx+4}" cy="{183}" r="3.5" fill="{colors[i]}"/>')
-        parts.append(f'<text x="{lx+13}" y="187" font-family="{FONT}" font-size="12" '
-                     f'fill="{TEXT_DIM}">{esc(label)}</text>')
-        lx += 16 + 6.6 * len(label)
+        x0 = 20 + i * cellw
+        parts.append(f'<circle cx="{x0+4:.0f}" cy="183" r="3.5" fill="{colors[i]}"/>')
+        parts.append(f'<text x="{x0+13:.0f}" y="187" font-family="{FONT}" '
+                     f'font-size="12" fill="{TEXT_DIM}">{esc(name)}</text>')
+        parts.append(f'<text x="{x0+13:.0f}" y="187" dx="{8 + 7.0*len(name):.0f}" '
+                     f'font-family="{MONO}" font-size="11.5" fill="{TEXT}">'
+                     f'{v/total*100:.0f}%</text>')
     return svg_doc(W, H, "\n".join(parts))
 
 
