@@ -68,5 +68,9 @@
 <br>
 
 <p align="center">
-  <sub>Stats cards regenerate nightly from the GitHub API — <code>scripts/generate_assets.py</code> · <img src="https://komarev.com/ghpvc/?username=sajxraj&style=flat-square&color=8b949e" alt="profile views"></sub>
+  <sub>Stats cards regenerate nightly from the GitHub API — <code>scripts/generate_assets.py</code></sub>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=sajxraj&style=flat-square&color=8b949e" alt="profile views">
 </p>
