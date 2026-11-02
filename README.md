@@ -50,7 +50,7 @@
 <br>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sajxraj/sajxraj/main/assets/activity.svg" alt="Contribution heatmap and GitHub stats" width="1008">
+  <img src="https://raw.githubusercontent.com/sajxraj/sajxraj/main/assets/activity.svg" alt="Contribution heatmap and GitHub stats" width="1028">
 </p>
 
 <details>

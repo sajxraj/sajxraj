@@ -161,7 +161,7 @@ def heatmap_body(d):
 
 # ---------- stats card ----------
 def stats_body(d):
-    W, H = 280, 260
+    W, H = 300, 316
     parts = []
     parts.append(f'<text x="20" y="34" font-family="{FONT}" font-size="14.5" '
                  f'font-weight="600" fill="{TEXT}">On GitHub</text>')
@@ -170,34 +170,31 @@ def stats_body(d):
              ("Merged PRs", d["prs"], ACCENT3),
              ("Followers", d["followers"], "#f778ba")]
     for i, (label, val, color) in enumerate(stats):
-        y = 74 + i * 34
+        y = 68 + i * 32
         parts.append(f'<text x="20" y="{y}" font-family="{FONT}" font-size="13" '
                      f'fill="{TEXT_DIM}">{label}</text>')
         parts.append(f'<text x="{W-20}" y="{y}" text-anchor="end" '
                      f'font-family="{MONO}" font-size="15" font-weight="700" '
                      f'fill="{color}">{val:,}</text>')
-    # language bars
-    y0 = 74 + 4 * 34 + 4
-    total = sum(v for _, v in d["langs"]) or 1
+    # languages: one row each — dot, name, right-aligned pct, bar
+    y0 = 68 + 4 * 32 + 8
     parts.append(f'<text x="20" y="{y0}" font-family="{FONT}" font-size="13" '
                  f'fill="{TEXT_DIM}">Top languages</text>')
-    dots, bars = [], []
-    x = 20
+    total = sum(v for _, v in d["langs"]) or 1
     for i, (name, v) in enumerate(d["langs"]):
+        color = [ACCENT, ACCENT2, ACCENT3, "#f778ba", "#d2a8ff"][i]
         pct = v / total
-        w = max(6, int((W - 40) * pct))
-        color = [ACCENT, ACCENT2, ACCENT3, "#f778ba", "#d2a8ff"][i]
-        bars.append(f'<rect x="{x}" y="{y0+12}" width="{w}" height="8" rx="4" fill="{color}"/>')
-        x += w
-    parts.extend(bars)
-    lx = 20
-    for i, (name, v) in enumerate(d["langs"]):
-        color = [ACCENT, ACCENT2, ACCENT3, "#f778ba", "#d2a8ff"][i]
-        label = f'{name} {v/total*100:.0f}%'
-        parts.append(f'<circle cx="{lx+4}" cy="{y0+38}" r="3.5" fill="{color}"/>')
-        parts.append(f'<text x="{lx+13}" y="{y0+42}" font-family="{FONT}" '
-                     f'font-size="11" fill="{TEXT_DIM}">{esc(label)}</text>')
-        lx += 26 + 6.4 * len(label)
+        y = y0 + 26 + i * 30
+        parts.append(f'<circle cx="24" cy="{y-4}" r="3.5" fill="{color}"/>')
+        parts.append(f'<text x="34" y="{y}" font-family="{FONT}" font-size="12" '
+                     f'fill="{TEXT}">{esc(name)}</text>')
+        parts.append(f'<text x="{W-20}" y="{y}" text-anchor="end" '
+                     f'font-family="{MONO}" font-size="12" fill="{TEXT_DIM}">'
+                     f'{pct*100:.0f}%</text>')
+        parts.append(f'<rect x="20" y="{y+7}" width="{W-40}" height="4" rx="2" '
+                     f'fill="{BG_SOFT}"/>')
+        parts.append(f'<rect x="20" y="{y+7}" width="{max(4,(W-40)*pct):.0f}" '
+                     f'height="4" rx="2" fill="{color}"/>')
     return parts, W, H
 
 
