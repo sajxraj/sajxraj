@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1028" height="316" viewBox="0 0 1028 316" fill="none">
-<rect width="1028" height="316" rx="14" fill="#0d1117" stroke="#30363d"/>
-<g transform="translate(0,63)"><text x="32" y="30" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" font-weight="600" fill="#e6edf3">3,409 contributions in the last year</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="712" height="190" viewBox="0 0 712 190" fill="none">
+<rect width="712" height="190" rx="14" fill="#0d1117" stroke="#30363d"/>
+<text x="32" y="30" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" font-weight="600" fill="#e6edf3">3,411 contributions in the last year</text>
 <text x="58" y="50" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">Nov</text>
 <text x="118" y="50" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">Dec</text>
 <text x="166" y="50" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">Jan</text>
@@ -388,40 +388,5 @@
 <rect x="580.0" y="162" width="10" height="10" rx="2.5" fill="#006d32"/>
 <rect x="592.0" y="162" width="10" height="10" rx="2.5" fill="#26a641"/>
 <rect x="604.0" y="162" width="10" height="10" rx="2.5" fill="#39d353"/>
-<text x="621.0" y="171" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">More</text></g>
-<g transform="translate(728,0)"><text x="20" y="34" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" font-weight="600" fill="#e6edf3">On GitHub</text>
-<text x="20" y="68" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#8b949e">Stars earned</text>
-<text x="280" y="68" text-anchor="end" font-family="'SF Mono',SFMono-Regular,Consolas,'Liberation Mono',monospace" font-size="15" font-weight="700" fill="#39d353">402</text>
-<text x="20" y="100" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#8b949e">Public repos</text>
-<text x="280" y="100" text-anchor="end" font-family="'SF Mono',SFMono-Regular,Consolas,'Liberation Mono',monospace" font-size="15" font-weight="700" fill="#58a6ff">30</text>
-<text x="20" y="132" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#8b949e">Merged PRs</text>
-<text x="280" y="132" text-anchor="end" font-family="'SF Mono',SFMono-Regular,Consolas,'Liberation Mono',monospace" font-size="15" font-weight="700" fill="#bc8cff">415</text>
-<text x="20" y="164" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#8b949e">Followers</text>
-<text x="280" y="164" text-anchor="end" font-family="'SF Mono',SFMono-Regular,Consolas,'Liberation Mono',monospace" font-size="15" font-weight="700" fill="#f778ba">61</text>
-<text x="20" y="204" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#8b949e">Top languages</text>
-<circle cx="24" cy="226" r="3.5" fill="#39d353"/>
-<text x="34" y="230" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#e6edf3">HTML</text>
-<text x="280" y="230" text-anchor="end" font-family="'SF Mono',SFMono-Regular,Consolas,'Liberation Mono',monospace" font-size="12" fill="#8b949e">47%</text>
-<rect x="20" y="237" width="260" height="4" rx="2" fill="#161b22"/>
-<rect x="20" y="237" width="122" height="4" rx="2" fill="#39d353"/>
-<circle cx="24" cy="256" r="3.5" fill="#58a6ff"/>
-<text x="34" y="260" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#e6edf3">PHP</text>
-<text x="280" y="260" text-anchor="end" font-family="'SF Mono',SFMono-Regular,Consolas,'Liberation Mono',monospace" font-size="12" fill="#8b949e">26%</text>
-<rect x="20" y="267" width="260" height="4" rx="2" fill="#161b22"/>
-<rect x="20" y="267" width="66" height="4" rx="2" fill="#58a6ff"/>
-<circle cx="24" cy="286" r="3.5" fill="#bc8cff"/>
-<text x="34" y="290" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#e6edf3">TypeScript</text>
-<text x="280" y="290" text-anchor="end" font-family="'SF Mono',SFMono-Regular,Consolas,'Liberation Mono',monospace" font-size="12" fill="#8b949e">11%</text>
-<rect x="20" y="297" width="260" height="4" rx="2" fill="#161b22"/>
-<rect x="20" y="297" width="29" height="4" rx="2" fill="#bc8cff"/>
-<circle cx="24" cy="316" r="3.5" fill="#f778ba"/>
-<text x="34" y="320" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#e6edf3">Java</text>
-<text x="280" y="320" text-anchor="end" font-family="'SF Mono',SFMono-Regular,Consolas,'Liberation Mono',monospace" font-size="12" fill="#8b949e">9%</text>
-<rect x="20" y="327" width="260" height="4" rx="2" fill="#161b22"/>
-<rect x="20" y="327" width="24" height="4" rx="2" fill="#f778ba"/>
-<circle cx="24" cy="346" r="3.5" fill="#d2a8ff"/>
-<text x="34" y="350" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#e6edf3">CSS</text>
-<text x="280" y="350" text-anchor="end" font-family="'SF Mono',SFMono-Regular,Consolas,'Liberation Mono',monospace" font-size="12" fill="#8b949e">7%</text>
-<rect x="20" y="357" width="260" height="4" rx="2" fill="#161b22"/>
-<rect x="20" y="357" width="18" height="4" rx="2" fill="#d2a8ff"/></g>
+<text x="621.0" y="171" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">More</text>
 </svg>

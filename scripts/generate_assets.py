@@ -198,16 +198,46 @@ def stats_body(d):
     return parts, W, H
 
 
-# ---------- combined activity card (heatmap + stats, gutter baked in) ----------
-def activity_svg(d):
-    hp, hw, hh = heatmap_body(d)
-    sp, sw, sh = stats_body(d)
-    gutter = 16
-    W, H = hw + gutter + sw, max(hh, sh)
-    body = [card(W, H),
-            f'<g transform="translate(0,{(H-hh)//2})">' + "\n".join(hp) + "</g>",
-            f'<g transform="translate({hw + gutter},0)">' + "\n".join(sp) + "</g>"]
-    return svg_doc(W, H, "\n".join(body))
+# ---------- separate stacked cards ----------
+def heatmap_card(d):
+    parts, W, H = heatmap_body(d)
+    return svg_doc(W, H, "\n".join([card(W, H)] + parts))
+
+
+def stats_card(d, W=712):
+    H = 210
+    parts = [card(W, H)]
+    parts.append(f'<text x="20" y="34" font-family="{FONT}" font-size="14.5" '
+                 f'font-weight="600" fill="{TEXT}">On GitHub</text>')
+    stats = [("Stars earned", d["stars"], ACCENT),
+             ("Public repos", d["repos"], ACCENT2),
+             ("Merged PRs", d["prs"], ACCENT3),
+             ("Followers", d["followers"], "#f778ba")]
+    cw = (W - 40) / 4
+    for i, (label, val, color) in enumerate(stats):
+        x = 20 + i * cw
+        parts.append(f'<text x="{x:.0f}" y="84" font-family="{MONO}" font-size="27" '
+                     f'font-weight="700" fill="{color}">{val:,}</text>')
+        parts.append(f'<text x="{x:.0f}" y="106" font-family="{FONT}" font-size="12.5" '
+                     f'fill="{TEXT_DIM}">{label}</text>')
+    parts.append(f'<text x="20" y="140" font-family="{FONT}" font-size="14.5" '
+                 f'font-weight="600" fill="{TEXT}">Top languages</text>')
+    total = sum(v for _, v in d["langs"]) or 1
+    colors = [ACCENT, ACCENT2, ACCENT3, "#f778ba", "#d2a8ff"]
+    x = 20.0
+    for i, (name, v) in enumerate(d["langs"]):
+        w = (W - 40) * (v / total)
+        parts.append(f'<rect x="{x:.1f}" y="152" width="{max(3,w):.1f}" height="8" '
+                     f'rx="4" fill="{colors[i]}"/>')
+        x += w
+    lx = 20
+    for i, (name, v) in enumerate(d["langs"]):
+        label = f'{name} {v/total*100:.0f}%'
+        parts.append(f'<circle cx="{lx+4}" cy="{183}" r="3.5" fill="{colors[i]}"/>')
+        parts.append(f'<text x="{lx+13}" y="187" font-family="{FONT}" font-size="12" '
+                     f'fill="{TEXT_DIM}">{esc(label)}</text>')
+        lx += 16 + 6.6 * len(label)
+    return svg_doc(W, H, "\n".join(parts))
 
 
 def main():
@@ -224,8 +254,9 @@ def main():
         src.write_bytes(urllib.request.urlopen(req, timeout=30).read())
     b64 = base64.b64encode(src.read_bytes()).decode()
     (out / "banner.svg").write_text(banner_svg(d, b64))
-    (out / "activity.svg").write_text(activity_svg(d))
-    print(f"wrote banner.svg activity.svg to {out}/ "
+    (out / "heatmap.svg").write_text(heatmap_card(d))
+    (out / "stats.svg").write_text(stats_card(d))
+    print(f"wrote banner.svg heatmap.svg stats.svg to {out}/ "
           f"({d['calendar']['totalContributions']:,} contributions, "
           f"{d['stars']} stars, {d['prs']} PRs)")
 
