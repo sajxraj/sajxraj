@@ -57,7 +57,6 @@
 <br>
 
 - [X / Twitter — @madebyoutside](https://x.com/madebyoutside)
-- [kheljatra.com](https://kheljatra.com)
 - Codewars:
 
 <p align="center">
