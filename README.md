@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sajxraj/sajxraj/main/assets/banner.svg" alt="Sajan Rajbhandari — Senior Software Engineer, Kathmandu Nepal" width="1000">
+  <img src="https://raw.githubusercontent.com/sajxraj/sajxraj/main/assets/banner.svg?v=2" alt="Sajan Rajbhandari — Senior Software Engineer, Kathmandu Nepal" width="1000">
 </p>
 
 <br>
@@ -35,7 +35,7 @@
 
 ```text
 2014  joined GitHub
-2016  Laravel — still the one
+2016  Laravel
 2017  deploy automation: Capistrano · Ansible
 2018  Vue & SPAs
 2019  Dockerized every setup
@@ -50,11 +50,11 @@
 <br>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sajxraj/sajxraj/main/assets/heatmap.svg" alt="Contribution heatmap" width="712">
+  <img src="https://raw.githubusercontent.com/sajxraj/sajxraj/main/assets/heatmap.svg?v=2" alt="Contribution heatmap" width="712">
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sajxraj/sajxraj/main/assets/stats.svg" alt="GitHub stats" width="712">
+  <img src="https://raw.githubusercontent.com/sajxraj/sajxraj/main/assets/stats.svg?v=2" alt="GitHub stats" width="712">
 </p>
 
 <br>

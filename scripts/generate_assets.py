@@ -227,7 +227,7 @@ def stats_card(d, W=712):
     x = 20.0
     for i, (name, v) in enumerate(d["langs"]):
         w = (W - 40) * (v / total)
-        parts.append(f'<rect x="{x:.1f}" y="152" width="{max(3,w):.1f}" height="8" '
+        parts.append(f'<rect x="{x:.1f}" y="152" width="{max(2,w-2):.1f}" height="8" '
                      f'rx="4" fill="{colors[i]}"/>')
         x += w
     n = len(d["langs"])
@@ -237,7 +237,7 @@ def stats_card(d, W=712):
         parts.append(f'<circle cx="{x0+4:.0f}" cy="183" r="3.5" fill="{colors[i]}"/>')
         parts.append(f'<text x="{x0+13:.0f}" y="187" font-family="{FONT}" '
                      f'font-size="12" fill="{TEXT_DIM}">{esc(name)}</text>')
-        parts.append(f'<text x="{x0+13:.0f}" y="187" dx="{8 + 7.0*len(name):.0f}" '
+        parts.append(f'<text x="{x0+cellw-6:.0f}" y="187" text-anchor="end" '
                      f'font-family="{MONO}" font-size="11.5" fill="{TEXT}">'
                      f'{v/total*100:.0f}%</text>')
     return svg_doc(W, H, "\n".join(parts))
