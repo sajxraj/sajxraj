@@ -53,20 +53,6 @@
   <img src="https://raw.githubusercontent.com/sajxraj/sajxraj/main/assets/activity.svg" alt="Contribution heatmap and GitHub stats" width="1028">
 </p>
 
-<details>
-<summary>Elsewhere & more</summary>
-
-<br>
-
-- [X / Twitter — @madebyoutside](https://x.com/madebyoutside)
-- Codewars:
-
-<p align="center">
-  <img src="https://www.codewars.com/users/sajxraj/badges/large" alt="Codewars">
-</p>
-
-</details>
-
 <br>
 
 <p align="center">
