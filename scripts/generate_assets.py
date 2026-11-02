@@ -52,7 +52,7 @@ def card(w, h):
 def fetch_data(user):
     u = gh("users", user)
     repos = gh(f"users/{user}/repos?per_page=100")
-    public = [r for r in repos if not r.get("fork")]
+    public = [r for r in repos if not r.get("fork") and not r.get("private")]
     stars = sum(r["stargazers_count"] for r in public)
     prs = gh(f"search/issues?q=author:{user}+type:pr")["total_count"]
     cal = gh("graphql", "-f",
