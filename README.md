@@ -16,7 +16,6 @@
 - 🚀 Building **[kheljatra](https://kheljatra.com)** — live football & cricket prediction game.
 - 🎨 Shipped **[Craftr](https://craftr.app)** — free eCards, memes, postcards, jerseys & coloring pages. Nepali templates + AI touches, web & Android.
 - 🛠️ Working with **[@madebyoutside](https://x.com/madebyoutside)**.
-- 🤖 LLM tooling side quests: **open-civic** and **ragtopus**.
 - 📍 Kathmandu, Nepal.
 
 ## Featured
@@ -29,7 +28,6 @@
 | **[OfficeManagementSystem](https://github.com/sajxraj/OfficeManagementSystem)** | Attendance, tasks, leave & complaint management | PHP · MySQL | ⭐ 40 |
 | **[clocktopus](https://github.com/sajxraj/clocktopus)** | Multi-platform time logging for Clockify & Jira | TypeScript | ⭐ 4 |
 | **[laravel-docker](https://github.com/sajxraj/laravel-docker)** | Opinionated PHP + nginx + MySQL dev environment | Docker | ⭐ 4 |
-| **[open-civic](https://github.com/sajxraj/open-civic)** | AI assistant for Nepal government services | TypeScript · LLM | ⭐ 3 |
 
 ## Journey
 
