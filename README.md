@@ -15,8 +15,8 @@
 
 - 🚀 Building **[kheljatra](https://kheljatra.com)** — live football & cricket prediction game.
 - 🎨 Shipped **[Craftr](https://craftr.app)** — free eCards, memes, postcards, jerseys & coloring pages. Nepali templates + AI touches, web & Android.
-- 🛠️ Working with **[@madebyoutside](https://x.com/madebyoutside)** — full-stack on the products the team builds, mostly Node.js & TypeScript.
-- 🤖 LLM tooling side quests: **open-civic** (AI assistant for Nepal government services) and **ragtopus** (RAG framework, Node + Postgres).
+- 🛠️ Working with **[@madebyoutside](https://x.com/madebyoutside)**.
+- 🤖 LLM tooling side quests: **open-civic** and **ragtopus**.
 - 📍 Kathmandu, Nepal.
 
 ## Featured
